@@ -19,11 +19,13 @@ public class Player_Movement : MonoBehaviour
     public void MoveLeft()
     {
         moveLeft = true;
+        _rigidbody2D.velocity = new Vector2(-1 * _velocity * _speed, _rigidbody2D.velocity.y);
     }
 
     public void MoveRight()
     {
         moveRight = true;
+        _rigidbody2D.velocity = new Vector2(_velocity * _speed, _rigidbody2D.velocity.y);
     }
 
     public void Jump()
