@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player_Movement : MonoBehaviour
 {
-    [SerializeField] private float _velocity = 150f;
+    [SerializeField] private float _velocity = 15f;
     [SerializeField] private float _speed = 1.00001f;
     private Rigidbody2D _rigidbody2D;
 
@@ -26,6 +26,11 @@ public class Player_Movement : MonoBehaviour
     {
         moveRight = true;
         _rigidbody2D.velocity = new Vector2(_velocity * _speed, _rigidbody2D.velocity.y);
+    }
+
+    public void MoveStop()
+    {
+        _rigidbody2D.velocity = new Vector2(0, _rigidbody2D.velocity.y);
     }
 
     public void Jump()
