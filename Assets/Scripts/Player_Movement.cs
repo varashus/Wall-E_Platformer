@@ -20,12 +20,14 @@ public class Player_Movement : MonoBehaviour
     {
         moveLeft = true;
         _rigidbody2D.velocity = new Vector2(-1 * _velocity * _speed, _rigidbody2D.velocity.y);
+        transform.localScale = new Vector2(-6, transform.localScale.y);
     }
 
     public void MoveRight()
     {
         moveRight = true;
         _rigidbody2D.velocity = new Vector2(_velocity * _speed, _rigidbody2D.velocity.y);
+        transform.localScale = new Vector2(6, transform.localScale.y);
     }
 
     public void MoveStop()
