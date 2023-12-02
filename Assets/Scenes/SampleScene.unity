@@ -158,9 +158,9 @@ RectTransform:
   - {fileID: 698919303}
   m_Father: {fileID: 1137926813}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 160, y: -410}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -76, y: 77}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &60164466
@@ -258,12 +258,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 4
+  - eventID: 2
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 537444496}
-          m_TargetAssemblyTypeName: Player_Movement, Assembly-CSharp
+        - m_Target: {fileID: 537444495}
+          m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
           m_MethodName: Jump
           m_Mode: 1
           m_Arguments:
@@ -439,7 +439,7 @@ GameObject:
   - component: {fileID: 537444491}
   - component: {fileID: 537444494}
   - component: {fileID: 537444493}
-  - component: {fileID: 537444496}
+  - component: {fileID: 537444495}
   m_Layer: 0
   m_Name: TestPlayer
   m_TagString: Untagged
@@ -586,7 +586,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &537444496
+--- !u!114 &537444495
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -595,11 +595,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 537444490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78ebddcf207c22248bd52d1b7f3423c8, type: 3}
+  m_Script: {fileID: 11500000, guid: a09b4add69cadf148b4d20b4dcdda3c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocity: 10
-  _speed: 1.00001
+  rb: {fileID: 537444494}
+  jumpForce: 10
+  speed: 5
 --- !u!1 &698919302
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,7 +1038,7 @@ GameObject:
   - component: {fileID: 1240200999}
   m_Layer: 0
   m_Name: Test
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2366,9 +2367,9 @@ RectTransform:
   - {fileID: 1581915839}
   m_Father: {fileID: 1137926813}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -165, y: -410.00003}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 100, y: 77}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1463643842
@@ -2470,9 +2471,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 537444496}
-          m_TargetAssemblyTypeName: Player_Movement, Assembly-CSharp
-          m_MethodName: MoveLeft
+        - m_Target: {fileID: 537444495}
+          m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+          m_MethodName: PointerDownLeft
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2486,9 +2487,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 537444496}
-          m_TargetAssemblyTypeName: Player_Movement, Assembly-CSharp
-          m_MethodName: MoveStop
+        - m_Target: {fileID: 537444495}
+          m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+          m_MethodName: PointerUpLeft
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2533,9 +2534,9 @@ RectTransform:
   - {fileID: 1540352625}
   m_Father: {fileID: 1137926813}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -37.00006, y: -410}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 231, y: 77}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1470083428
@@ -2637,9 +2638,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 537444496}
-          m_TargetAssemblyTypeName: Player_Movement, Assembly-CSharp
-          m_MethodName: MoveRight
+        - m_Target: {fileID: 537444495}
+          m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+          m_MethodName: PointerDownRight
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2653,9 +2654,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 537444496}
-          m_TargetAssemblyTypeName: Player_Movement, Assembly-CSharp
-          m_MethodName: MoveStop
+        - m_Target: {fileID: 537444495}
+          m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+          m_MethodName: PointerUpRight
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
