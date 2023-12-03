@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rb;
+    private Rigidbody2D rb;
+    private SpriteRenderer sr;
 
     private bool moveLeft = false;
     private bool moveRight = false;
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -48,10 +50,12 @@ public class PlayerMovement : MonoBehaviour
         if (moveLeft)
         {
             horizontalMove = -speed;
+            sr.flipX = true;
         }
         else if (moveRight)
         {
             horizontalMove = speed;
+            sr.flipX = false;
         }
         else
         {
