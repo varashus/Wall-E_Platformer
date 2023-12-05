@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     bool grounded;
     private float horizontalMove;
     public float speed = 5;
+    public Animator animator;
+
+
 
     void Start()
     {
@@ -43,10 +46,13 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MovePlayer();
+        
     }
 
     private void MovePlayer()
     {
+       
+
         if (moveLeft)
         {
             horizontalMove = -speed;
